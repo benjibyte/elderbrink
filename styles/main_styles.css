@@ -6,9 +6,7 @@ html {
 * {
     /*Base Template settings*/
     color: var(--light-grey-color);
-    font-family: 'Courier New', Courier, monospace;
-
-
+    font-family: "Fira Code", monospace;
     /*Color pallet*/
     --black-color: black;
     --grey-color: rgb(35, 35, 43);
@@ -21,7 +19,6 @@ html {
     /*Custom Property*/
     --spacer_3: 2vw;
 }
-
 
 
 /*Scroll reader that keeps track of reading an page*/
@@ -262,7 +259,7 @@ img {
 #page-text {
     color: var(--black-color);
     padding: 2ch;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Lato", sans-serif;
     text-align: left;
 }
 
