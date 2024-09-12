@@ -131,10 +131,10 @@ main {
     flex: 1;
 }
 
-.scroll-tiles {
+#scroll-tiles {
 
     /*Creating the scrolling section*/
-    display: grid;
+    display: none;
     grid-auto-flow: column;
     grid-auto-columns: 23%;
     gap: var(--spacer_3);
@@ -152,7 +152,7 @@ main {
 }
 
 /*Hiding the horizontal scrollbar for other browsers*/
-.scroll-tiles::-webkist-scrollbar {
+#scroll-tiles::-webkist-scrollbar {
     display: none;
 }
 
@@ -169,6 +169,10 @@ main {
 
 /*Tiles are the selections for multiple schedules and reports*/
 .tiles {
+    /*Invisible until clicking "Reports"*/
+    
+
+
     /*Formatting*/
     margin: 10px;
     margin-left: 5px;
@@ -194,6 +198,9 @@ main {
     color: var(--light-grey-color);
 
 }
+
+
+
 
 .tiles button {
     background: none;
@@ -261,6 +268,16 @@ img {
     padding: 2ch;
     font-family: "Lato", sans-serif;
     text-align: left;
+}
+
+
+/*For the spans inside of the txt files that are loaded into page-text, so that they are centered and really bold at the top of the file*/
+#date {
+    display: block;
+    margin: 0 auto;
+    color: var(--black-color);
+    font-size: larger;
+    font-weight: 800;
 }
 
 #bold-me {

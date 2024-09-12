@@ -13,7 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-    <script src="scripts/script.js"></script>
+    <script src="scripts/script.js" defer></script>
     <title>Elder Brinkerhoff</title>
 </head>
 
@@ -34,9 +34,9 @@
 
     <main>
         <!--The Row of Record Tile buttons-->
-        <div class="scroll-tiles snaps-inline">
-            <div class="tiles"><button>not done</button></div>
-            <div class="tiles"><button>not done</button></div>
+        <div class="snaps-inline" id="scroll-tiles">
+            <div class="tiles" data-type="report" data-id="1"><button onclick="loadSpecificReport('texts/report1.txt')">Report 1</button></div>
+            <div class="tiles" data-type="report" data-id="2"><button onclick="loadSpecificReport('texts/report2.txt')">Report 2</button></div>
 
 
 
@@ -45,11 +45,11 @@
 
         <h2 id="page-headline">Home</h2>
         <section class="page-elements">
-            <h3>Click a Page to Load Content</h3>
+            <h3 id="page-title">Click a Page to Load Content</h3>
 
             <!--Javascript loads in the page text-->
             <p id="page-text">
-
+                
             </p>
         </section>
     </main>
