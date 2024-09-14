@@ -18,4 +18,56 @@
     max-width: 540px;
     background: white;
     padding: 40px 30px 70px;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.todo-app h2 img {
+    width: 30px;
+    margin-left:10px;
+}
+
+.row {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 10px;
+
+    height: 4em;
+}
+
+#input-box {
+    background: none;
+    border: none;
+    width: 100%;
+    height: 4em;
+    outline: none;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.row button {
+    
+    /*A little bigger than the task area so that touch screens can easily add tasks*/
+    background: none;
+    background-color: rgb(106, 199, 171);
+    border: none;
+    border-radius: 30px;;
+    width: 4em;
+    height: 3em;
+
+    font-weight: bolder;
+    font-size: larger;
+
 }
