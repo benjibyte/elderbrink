@@ -8,17 +8,25 @@
 </head>
 <body>
     <div class="container">
+
+        <!--White block background-->
         <div class="todo-app">
+
                 <h2>To-Do List <img src="images/todo/checklist.webp"></h2>
+                
+                <!--Task Creator-->
                 <div class="row">
                     <input type="text" id="input-box" placeholder="Add Task">
                     <button onclick="saveToFile()">Add</button>
                 </div>
+
+                <!--The task list-->
                 <div id="task-list">
-                    
+                    <!--Article tags created on the client side by the Task Creator appear here.-->
                 </div>
                 
-
+                <!--The Save Button-->
+                <button onclick="downloadTaskList()" id="save-button">Save</button>
         </div>
         
     </div>
