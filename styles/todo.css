@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    --grad-color1: rgb(30, 29, 49);
+    --grad-color2: rgb(10, 51, 78);
+
+}
+.container {
+ width: 100%;
+ min-height: 100vh;
+ background: linear-gradient(135deg, var(--grad-color1), var(--grad-color2));
+ padding: 10px;
+}
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background: white;
+    padding: 40px 30px 70px;
+}
