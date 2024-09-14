@@ -6,7 +6,13 @@
     --grad-color1: rgb(30, 29, 49);
     --grad-color2: rgb(10, 51, 78);
 
+    --white-color: rgb(220,220,220);
+    --gray-color: rgb(200,200,200);
+
+    --green-accent: rgb(110, 200, 170);
 }
+
+/* White Background blob */
 .container {
  width: 100%;
  min-height: 100vh;
@@ -14,9 +20,10 @@
  padding: 10px;
 }
 .todo-app {
+    
     width: 100%;
     max-width: 540px;
-    background: white;
+    background: var(--white-color);
     padding: 40px 30px 70px;
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
@@ -24,7 +31,7 @@
 }
 
 .todo-app h2 {
-    color: #002765;
+    color: var(--grad-color1);
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -36,11 +43,39 @@
     margin-left:10px;
 }
 
+/*task list that is created*/
+
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+#task-list a {
+    width: 100%;
+    text-align: left;
+    padding: 1em;
+    background: var(--green-accent);
+    border-radius: 5px;
+    margin-top: 1em;
+
+    text-decoration: none;
+    text-align: center;
+    color: var(--grad-color1);
+    
+}
+
+
+
+
+/*Task input area*/
+
 .row {
     display:flex;
     align-items: center;
     justify-content: space-between;
-    background: #edeef0;
+    background: var(--gray-color);
     border-radius: 30px;
     padding-left: 10px;
 
@@ -61,9 +96,9 @@
     
     /*A little bigger than the task area so that touch screens can easily add tasks*/
     background: none;
-    background-color: rgb(106, 199, 171);
+    background-color: var(--green-accent);
     border: none;
-    border-radius: 30px;;
+    border-radius: 30px;
     width: 4em;
     height: 3em;
 
