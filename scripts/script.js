@@ -120,12 +120,27 @@ function loadScheduleContent(event) {
         .then(response => response.text())
         .then(data => {
             // grabs the paragraph tag with the "article text" id and slides the data from the txt file into that slot.
-            document.getElementById("page-text").innerText = data;
+            document.getElementById("page-text").innerHTML = data;
 
         })
         .catch(error => console.error("Error fetching the text file:", error))
 
 };
+
+
+// Temporary link to downloading a talk from the schedule webpage, which has currentlt been renamed to downloads on the client side
+function downloadTalk(event) {
+    event.preventDefault();
+
+    const secretLink = document.createElement("a");
+    secretLink.style.display = "none";
+    secretLink.href = "texts/faith-in-christ-and-the-word-of-god.txt";
+    secretLink.download('faith-in-christ-and-the-word-of-god.txt');
+    document.body.appendChild(secretLink);
+    secretLink.click();
+    document.body.removeChild(secretLink);
+}
+
 
 // Load ALL of this content to the tags after the html has loaded into the browser
 document.addEventListener("DOMContentLoaded", function () {
@@ -137,4 +152,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("load-reports").addEventListener("click", displayReportTiles);
     document.getElementById("load-reports").addEventListener("click", loadReportsContent);
+    document.getElementById("download-talk").addEventListener("click", downloadTalk);
 })          

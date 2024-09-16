@@ -270,6 +270,14 @@ img {
     text-align: left;
 }
 
+#page-text a {
+    color: var(--black-color);
+    padding: 2ch;
+    font-family: "Lato", sans-serif;
+    text-align: left;
+    background: var(--green-color);
+    border-radius: 10px;
+}
 
 /*For the spans inside of the txt files that are loaded into page-text, so that they are centered and really bold at the top of the file*/
 #date {
