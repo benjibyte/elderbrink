@@ -76,10 +76,11 @@ a {
 }
 
 
+
+
+
 /*main*/
 /*Buttons for records.html*/
-
-
 .actual-btn {
     border: none;
     border-radius: 10px;
@@ -150,14 +151,30 @@ a {
 
 #record-btn-container.loaded {
     display: flex;
+    justify-content: center;
     overflow-x: scroll;
     white-space: nowrap;
+}
+
+
+
+/*Gallery.html*/
+
+.image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+
 }
 
 img {
     max-width: 80%;
     box-shadow: 0px 5px 8px var(--color-fade);
     border-radius: 10px;
+}
+
+.individual-image {
+    margin-bottom: 15px;
 }
 
 
