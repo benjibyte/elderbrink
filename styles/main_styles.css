@@ -1,302 +1,171 @@
-html {
-    height: 100%;
+/*Importing fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap');
+
+:root {
     overscroll-behavior: none;
 }
-
 * {
-    /*Base Template settings*/
-    color: var(--light-grey-color);
-    font-family: "Fira Code", monospace;
-    /*Color pallet*/
-    --black-color: black;
-    --grey-color: rgb(35, 35, 43);
-    --light-grey-color: white;
-    --green-color: rgb(94, 165, 98);
-    --faded-grey-color: rgba(177, 177, 177, 0.75);
-    --monitor-glow: rgba(255, 255, 255, 0.479);
-
-
-    /*Custom Property*/
-    --spacer_3: 2vw;
-}
-
-
-/*Scroll reader that keeps track of reading an page*/
-.scroll-reader {
-    height: 1vh;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    background-color: var(--faded-grey-color);
-    width: 100%;
-    scale: 0 1;
-    transform-origin: left;
-    animation: scroll-reader linear;
-    animation-timeline: scroll();
-    /*This is the property selected by the @keyframes to animate*/
-}
-
-/*Scroll reader's animation per each keyframes*/
-@keyframes scroll-reader {
-    to {
-        /*1 1 just means on the x and y axis when the animation is over*/
-        scale: 1 1;
-    }
-}
-
-body {
-    background-color: var(--black-color);
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
 
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    font-family: "Fredoka";
 
+    --color-black : rgb(0, 0, 0);
+    --color-white: rgb(255,255,255);
+    --color-gray-1: rgb(225,225,225);
+    --color-gray-2: rgb(200,200,200);
+    --color-gray-3: rgb(100,100,100);
+    --color-green: rgb(100,240,100);
+
+    --color-fade: rgba(0, 0, 0, 0.25);
 }
 
+
+
+/*header*/
 header {
-    /*Colors and formatting*/
-    background-color: var(--black-color);
-    margin: 0;
-    padding: 0;
+    /*Colors for the header*/
+    background-color: var(--color-black);
+    color: var(--color-white);
+    box-shadow: 0px 5px 8px var(--color-fade);
+    top: 0;
+    position: sticky;
+}
 
-    /*Center Header Text*/
+/*The little webpage scroll progress box*/
+.progress-box {
+    width: 100%;
+    height: 10px;
+}
+#progress-filling {
+    width: 0%;
+    height: 10px;
+    background-color: var(--color-gray-3);
+}
+
+/*Center all headings*/
+h1, h2 {
     text-align: center;
-
-    /*Drop Shadow*/
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-    z-index: 10;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
 }
 
-/*less padding beneath the header text*/
-header h1 {
-    margin-bottom: 0;
-
-}
-
+/*Formatting for them menu bar*/
 nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 50px;
-}
-
-
-.menu-bar {
-    display: flex;
     flex-direction: row;
-    list-style-type: none;
-    padding: 0;
-    margin: 0 auto;
-    width: auto;
+    list-style: none;
 }
 
-.menu-bar li {
-    margin-right: 20px;
-}
-
-.menu-bar button {
-    /*Formatting*/
-    display: block;
-    padding: 15px 15px;
-    text-decoration: none;
-    font-size: larger;
-    background: none;
-    border: none;
-
-    width: 100%;
-    height: 100%;
-    /*Color*/
-    color: var(--light-grey-color);
-    transition: font-style 0.1s ease;
-}
-
-.menu-bar button:hover {
-    /*Hover Effects*/
-    color: var(--green-color);
-    font-weight: bolder;
-    font-style: italic;
-}
-
-main {
-    background-color: var(--grey-color);
+/*individual menu items*/
+nav li {
+    /*spacing*/
     margin: 0;
-    padding: 0;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    flex: 1;
-}
+    margin-right: 5vw;
+    margin-bottom: 10px;
 
-#scroll-tiles {
-
-    /*Creating the scrolling section*/
-    display: none;
-    grid-auto-flow: column;
-    grid-auto-columns: 23%;
-    gap: var(--spacer_3);
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-
-    /*centering the row*/
-    justify-content: center;
-    align-items: center;
-
-    /*Hide the Scroll bar for webkit browsers like chrome*/
-    -webkit-overflow-scrolling: touch;
-    /*...and for FireFox*/
-    scrollbar-width: none;
-}
-
-/*Hiding the horizontal scrollbar for other browsers*/
-#scroll-tiles::-webkist-scrollbar {
-    display: none;
-}
-
-.snaps-inline {
-    scroll-snap-type: inline mandatory;
-    scroll-padding-inline: var(--spacer_3);
-    /*Custom property*/
-}
-
-/*This grabs all the children of the snap inline class (tiles)*/
-.snaps-inline>* {
-    scroll-snap-align: start;
-}
-
-/*Tiles are the selections for multiple schedules and reports*/
-.tiles {
-    /*Invisible until clicking "Reports"*/
-    
-
-
-    /*Formatting*/
-    margin: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-
-    padding-right: 5px;
-    padding-left: 5px;
-    /*Centering Text and setting width and hieght of each tile*/
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-
-
-    width: 18vw;
-    height: 3rem;
+    /*font look*/
     font-size: larger;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
 
-    /*Interesting round corners!*/
-    border-radius: 8px;
-    /*Colors*/
-    background-color: var(--black-color);
-    color: var(--light-grey-color);
-
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
+/*main*/
+/*Buttons for records.html*/
 
 
-.tiles button {
-    background: none;
+.actual-btn {
     border: none;
-    color: var(--light-grey-color);
-    font-size: large;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-/*When A Tile is hovered over, it turns to green just like the nav bar*/
-.tiles:hover {
-    /*Hover Effects*/
-    background-color: var(--green-color);
-    font-weight: bolder;
-    box-shadow: 0ch 0px 10px var(--monitor-glow);
-}
-
-
-
-section {
-    background-color: var(--light-grey-color);
-    margin: 0 auto;
-
-}
-
-/*Mobile*/
-.page-elements {
-    /*Formatting*/
-
-    height: fit-content;
-    max-width: 325px;
     border-radius: 10px;
-    box-shadow: 0ch 0px 10px var(--monitor-glow);
+    
+    background-color: var(--color-black);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    color: var(--color-white);
+    font-size: larger;
+
+    width: 90%;
+    height: 3em;
+
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    
+    opacity: 0;
+    
+    animation: fadeIn 1s forwards;
 }
 
-@media (min-width: 750px) {
-    .page-elements {
-        /*Formatting*/
-
-        height: fit-content;
-        max-width: 450px;
-        border-radius: 10px;
-        box-shadow: 0ch 0px 10px var(--monitor-glow);
+/*Fade in effect*/
+@keyframes fadeIn {
+    to {
+        opacity: 0.8;
+        
     }
 }
 
-/*page headline*/
-h3 {
-    color: var(--black-color);
-    padding-top: 1vh;
+.actual-btn:hover {
+    background-color: var(--color-green);
+    color: var(--color-black);
+
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0px 10px 10px var(--color-fade);
 }
 
-p {
-    font-size: large;
+#record-btn-container {
+    display: none;
+    flex-direction: row;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+
+    position: sticky;
+    top: 106px;
+    z-index:100;
+    
+    
 }
 
-img {
-    box-shadow: 0 4px 8px var(--faded-grey-color);
+#record-btn-container.loaded {
+    display: flex;
 }
 
-#page-text {
-    color: var(--black-color);
-    padding: 2ch;
-    font-family: "Lato", sans-serif;
-    text-align: left;
+
+main {
+    padding: 15px;
+    background-color: var(--color-gray-2);
 }
 
-#page-text a {
-    color: var(--black-color);
-    padding: 2ch;
-    font-family: "Lato", sans-serif;
-    text-align: left;
-    background: var(--green-color);
-    border-radius: 10px;
-}
 
-/*For the spans inside of the txt files that are loaded into page-text, so that they are centered and really bold at the top of the file*/
-#date {
-    display: block;
+
+/*Reading panel*/
+.main-page {
+    background-color: var(--color-white);
+    padding: 1em;
+    padding-top: 1em;
     margin: 0 auto;
-    color: var(--black-color);
-    font-size: larger;
-    font-weight: 800;
+
+    margin-top: 0;
+    transition: margin-top 0.5s ease;
+
+    max-width: 500px;
+    min-height: 100vh;
+    border-radius: 10px;
+    box-shadow: 0px 5px 8px var(--color-fade);
 }
 
-#bold-me {
-    font-weight: bolder;
+.main-page.slidedown {
+    margin-top:3em;
 }
 
-/*AI generated footer code*/
 footer {
-    background-color: var(--black-color);
-    margin: 0;
-    padding: 0;
+    background-color: var(--color-gray-2);
     text-align: center;
-    height: 3em;
+    padding-bottom: 1em;
 }

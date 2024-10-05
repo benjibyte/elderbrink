@@ -11,13 +11,13 @@
     <!--Font import End-->
     <link rel = "stylesheet" href = "styles/main_styles.css">
     <script src="scripts/script.js"></script>
-    <title>Elder Brinkerhoff | Home</title>
+    <title>Elder Brinkerhoff | Records</title>
 </head>
 <body>
         <header>
             <h1>Elder Brinkerhoff</h1>
             <nav>
-                <li><a>Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="records.html">Records</a></li>
                 <li><a>Gallery</a></li>
                 <li><a>Downloads</a></li>
@@ -30,10 +30,20 @@
         </header>
 
         <main>
+            <!--Record Buttons for loading in different text-->
+            <div id="record-btn-container">
+                <button class = "actual-btn" onclick="loadInReport('texts/report1.txt')">Record 1</button>
+                <button class = "actual-btn" onclick="loadInReport('texts/report2.txt')">Record 2</button>
+                <button class = "actual-btn" onclick="loadInReport('texts/report3.txt')">Record 3</button>
+                <button class = "actual-btn" onclick="loadInReport('texts/report4.txt')">Record 4</button>
+               
+            </div>
+
+            <!--Reading page-->
             <section class = "main-page">
-                <h2>Home</h2>
-                <!-- <div id="content"></div> -->
-                <p>I am Elder Brinkerhoff, and I have been called of the Lord Jesus Christ to serve and minister unto his people.</p>
+                <h2>Records</h2>
+                <div id="content">Click a Record Button to begin reading a record!</div>
+                
             </section>
         </main>
 
