@@ -1,5 +1,10 @@
-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: ;
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#background-image {
+    width: 90vw;
+    height: 100vh;
+
 }
