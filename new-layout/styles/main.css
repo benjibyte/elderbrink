@@ -1,10 +1,37 @@
-* {
-    padding: 0px;
-    margin: 0px;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
 }
 
-#background-image {
-    width: 90vw;
-    height: 100vh;
 
+
+body {
+    background-color: rgb(18, 73, 70);
+    background-image: url("../images/backgrounds/sky.jpg");
+    background-size: cover;
+
+    text-align: center;
+    color: white;
+}
+    
+header {
+    background-color: rgba(0, 0, 0, 0.404);
+    padding: 20px;
+    backdrop-filter: blur( 4px);
+    box-shadow: 0px 8px 32px rgba(72, 34, 107, 0.5)
+}
+
+main {
+    background-color: rgba(37, 16, 85, 0.404);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 2rem;
+    backdrop-filter: blur( 4px);
+    box-shadow: 0px 8px 32px rgba(72, 34, 107, 0.5)
+}
+
+main p {
+    text-align: left;
+    padding: 1em;
 }
