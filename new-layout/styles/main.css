@@ -2,36 +2,103 @@
     margin: 0;
     padding: 0;
     font-family: system-ui;
-}
+    --black: rgb(0,0,0);
+    --green: rgb(90, 200, 135);
 
-
-
-body {
-    background-color: rgb(18, 73, 70);
-    background-image: url("../images/backgrounds/sky.jpg");
-    background-size: cover;
-
-    text-align: center;
-    color: white;
-}
+    --darkMode-text: rgb(225,255,225);
+    --darkMode-bkg: linear-gradient(rgb(42, 15, 65), rgb(15, 23, 61),rgb(42, 15, 65));
+    --lightMode-bkg: linear-gradient(rgb(255, 255, 255),rgb(196, 255, 240),rgb(255, 255, 255));
     
+    
+}
+
 header {
-    background-color: rgba(0, 0, 0, 0.404);
-    padding: 20px;
-    backdrop-filter: blur( 4px);
-    box-shadow: 0px 8px 32px rgba(72, 34, 107, 0.5)
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    color: white;
+    padding: 1em;
+    position: fixed;
+}
+
+h1 {
+    padding-bottom: 1rem;
 }
 
 main {
-    background-color: rgba(37, 16, 85, 0.404);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 2rem;
-    backdrop-filter: blur( 4px);
-    box-shadow: 0px 8px 32px rgba(72, 34, 107, 0.5)
+    padding-top:10em;
 }
 
-main p {
-    text-align: left;
-    padding: 1em;
+footer {
+    padding: 2em;
+    text-align: center;
 }
+
+.dark-mode{
+    background-image: var(--darkMode-bkg);
+    color: white;
+    --accent: rgba(90, 200, 135,0.2);
+}
+.dark-mode a {
+    --header-btn: rgb(30,30,50);
+}
+
+.light-mode {
+    background-image: var(--lightMode-bkg);
+    color: black;
+    --accent: rgba(90, 200, 135,0.2);
+}
+
+.light-mode a {
+    --header-btn: rgb(200,200, 250);
+    color:black;
+}
+
+.light-mode .reading-panels {
+    background-color: var(--accent);
+}
+
+.dark-mode .reading-panels {
+    background-color: var(--accent);
+}
+
+
+/*menu*/
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item {
+    padding: 1em;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    background-color: var(--header-btn);
+    color: white;
+    padding: 1em;
+    border-radius: 5px;;
+}
+
+a:hover {
+    background-color: var(--green);
+}
+
+.reading-panels {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    max-width: 20em;
+
+    margin: 10px auto;
+    padding: 1em;
+    border-radius: 1em;
+}
+
