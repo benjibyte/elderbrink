@@ -71,18 +71,20 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin:0;
+    width: 100%;
 }
 
 .menu-item {
-    padding: 1em;
+    padding: 0em;
     list-style: none;
 }
 
 a {
     text-decoration: none;
-    background-color: var(--header-btn);
+    background-color: var(--black);
     color: white;
-    padding: 1em;
+    padding:1em;
     border-radius: 5px;;
 }
 
